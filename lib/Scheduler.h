@@ -6,17 +6,17 @@
 class TTaskScheduler {
 public:
     template <typename Expression, typename T>
-	[[nodiscard]] NodePointer Add(Expression&& expression, const T& argument1, const T& argument2) {
+    [[nodiscard]] NodePointer Add(Expression&& expression, const T& argument1, const T& argument2) {
 	    NodePointer new_node = CreateNode(std::move(expression), argument1, argument2);
 	    
 	    graph.InsertToNodeList(new_node);
 	    
 	    return new_node;
 	}
-
+	
 	template <typename Expression, typename T>
 	[[nodiscard]] NodePointer Add(Expression&& expression, const T& argument1, const T* argument2) {
-	    NodePointer new_node = CreateNode(std::move(expression), argument1, argument2);
+		NodePointer new_node = CreateNode(std::move(expression), argument1, argument2);
 	    
 	    graph.InsertToNodeList(new_node);
 	    
