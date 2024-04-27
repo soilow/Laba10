@@ -37,7 +37,7 @@ public:
     void Calculate() override {
         static_assert(std::is_same_v<decltype(argument1_), const T> &&
                       std::is_same_v<decltype(argument2_), const T>,
-                      "Argument have to be the same type as in lambda function");
+                      "Arguments have to be the same type as in lambda function");
         
         result_ = expression_(argument1_, argument2_);
         SetResultAsCalculated();
@@ -71,7 +71,7 @@ public:
     void Calculate() override {
         static_assert(std::is_same_v<decltype(argument1_), const T> &&
                       std::is_same_v<decltype(argument2_), const T*>,
-                      "Argument have to be the same type as in lambda function");
+                      "Arguments have to be the same type as in lambda function");
         
         result_ = expression_(argument1_, *argument2_);
         SetResultAsCalculated();
@@ -105,7 +105,7 @@ public:
     void Calculate() override {
         static_assert(std::is_same_v<decltype(argument1_), const T*> &&
                       std::is_same_v<decltype(argument2_), const T*>,
-                      "Argument have to be the same type as in lambda function");
+                      "Arguments have to be the same type as in lambda function");
         
         result_ = expression_(*argument1_, *argument2_);
         SetResultAsCalculated();
@@ -137,7 +137,7 @@ public:
 
     void Calculate() override {
         static_assert(std::is_same_v<decltype(argument1_), const T>,
-                      "Argument have to be the same type as in lambda function");
+                      "Argument has to be the same type as in lambda function");
         
         result_ = expression_(argument1_);
         SetResultAsCalculated();
@@ -168,7 +168,7 @@ public:
 
     void Calculate() override {
         static_assert(std::is_same_v<decltype(argument1_), const T*>,
-                      "Argument have to be the same type as in lambda function");
+                      "Argument has to be the same type as in lambda function");
         
         result_ = expression_(*argument1_);
         SetResultAsCalculated();
